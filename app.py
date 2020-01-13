@@ -21,7 +21,7 @@ def predict():
         with graph.as_default():
             result = model.predict(np.array([review_tensor][0]))[0][0]
 
-        if result <= 0.5:
+        if result <= 0.7:
             decision = "Review is negative"
         else:
             decision = "Review is positive"
