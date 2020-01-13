@@ -1,0 +1,12 @@
+{% extends 'base.html' %} {% block form %}
+
+<form action="/predict" method="POST">
+  <textarea rows="10" cols="150" name="review" id="review"></textarea><br />
+  <input type="submit" value="Predict" />
+</form>
+
+{% if review|length > 1 %}
+<div>
+  {{ review }}
+</div>
+{% endif %} {% endblock %}

@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.container {
+  padding-top: 40vh;
+  display: block;
+  text-align: center;
+}
+
+#review {
+  outline: none;
+  resize: none;
+  font-size: 1em;
+}
+
+input[type="submit"] {
+}

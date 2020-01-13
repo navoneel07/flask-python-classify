@@ -1,19 +1,18 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 
 app = Flask(__name__)
 
 
 @app.route('/predict', methods=['GET', 'POST'])
 def predict():
-    data = {"success": False}
-    params = request.json
-    if(params == None):
-        params = request.args
-    if (params != None):
-        data["response"] = params.get("msg")
-        data["success"] = True
 
-    return jsonify(data)
+    if(request.method == "POST"):
+        review = request.form['review']
+
+        return render_template("form.html", review=review)
+
+    else:
+        return render_template("form.html", review="")
 
 
 if(__name__ == "__main__"):
